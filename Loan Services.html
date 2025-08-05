@@ -1,0 +1,84 @@
+<section class="section" id="loans">
+  <h2>Apply for a Simple Loan</h2>
+  <p>Need financial help? Apply for a quick and simple loan with flexible repayment options.</p>
+
+  <div class="loan-form">
+    <form onsubmit="submitLoanForm(event)">
+      <input type="text" id="loan-name" placeholder="Full Name" required>
+      <input type="email" id="loan-email" placeholder="Email Address" required>
+      <input type="tel" id="loan-phone" placeholder="Phone Number" required>
+      <input type="number" id="loan-amount" placeholder="Loan Amount (ZMW)" required>
+      <textarea id="loan-purpose" placeholder="Purpose of Loan" required></textarea>
+      <button class="btn" type="submit">Submit Loan Request</button>
+    </form>
+    <p id="loan-message"></p>
+  </div>
+</section>
+
+<style>
+.loan-form {
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+section id{
+  text-align: center;
+  color: aliceblue;
+} 
+#hero h2{
+  padding: 5px;
+  text-align:center ;
+  color: #0056b3;
+}
+body{
+  background-color: aquamarine;
+}
+#p {
+  text-align: center;
+  padding: 0%;
+}
+
+.loan-form input,
+.loan-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #879e03;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.loan-form button.btn {
+  background-color: #c3f047;
+  color: rgb(3, 158, 158);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.loan-form button.btn:hover {
+  background-color: #0056b3;
+}
+</style>
+
+<script>
+function submitLoanForm(event) {
+  event.preventDefault();
+  
+  // Gather form data
+  const name = document.getElementById('loan-name').value;
+  const email = document.getElementById('loan-email').value;
+  const phone = document.getElementById('loan-phone').value;
+  const amount = document.getElementById('loan-amount').value;
+  const purpose = document.getElementById('loan-purpose').value;
+
+  // Display a confirmation message
+  document.getElementById('loan-message').innerText = `Thanks, ${name}. Your loan request of ZMW ${amount} has been received. We'll contact you shortly.`;
+
+  // Clear the form
+  event.target.reset();
+}
+</script>

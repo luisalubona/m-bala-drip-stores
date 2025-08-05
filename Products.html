@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Store - Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Store</h1>
+  </header>
+  <style>body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.section {
+  padding: 2rem;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+}
+body{
+  background-color: #5dbd03;
+}
+.product {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  background-color: #02a388;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  align-items : center;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.btn:hover {
+  background-color: #218838;
+}
+</style>
+
+  <section class="section" id="products">
+    <h2>Our Products</h2>
+
+    <!-- SHOES -->
+    <h3>Shoes (Smart / Sneakers)</h3>
+    <div class="products">
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-12 at 12.32.02_169bd374.jpg" alt="Smart Shoes">
+        <h3>Smart Leather Shoes</h3>
+        <p>K300</p>
+        <button class="btn" onclick="addToCart('Smart Leather Shoes', 49.99)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-12 at 12.32.02_169bd374.jpg" alt="Sneakers">
+        <h3>Casual Sneakers</h3>
+        <p>K290</p>
+        <button class="btn" onclick="addToCart('Casual Sneakers', 39.99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- SWEATPANTS -->
+    <h3>Sweatpants</h3>
+    <div class="products">
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-12 at 12.32.02_169bd374.jpg" alt="Sweatpants">
+        <h3>Unisex Sweatpants</h3>
+        <p>K300</p>
+        <button class="btn" onclick="addToCart('Unisex Sweatpants', 24.99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- T-SHIRTS AND SHIRTS -->
+    <h3>T-Shirts and Shirts</h3>
+    <div class="products">
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-12 at 12.32.02_169bd374.jpg" alt="T-Shirt">
+        <h3>Graphic T-Shirt</h3>
+        <p>K170</p>
+        <button class="btn" onclick="addToCart('Graphic T-Shirt', 14.99)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-12 at 12.32.02_169bd374.jpg" alt="Shirt">
+        <h3>Formal Shirt</h3>
+        <p>K170</p>
+        <button class="btn" onclick="addToCart('Formal Shirt', 19.99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- TROUSERS -->
+    <h3>Trousers (Smart / Swagger)</h3>
+    <div class="products">
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-24 at 13.09.13_d045827c.jpg" alt="Smart Trousers">
+        <h3>Smart Trousers</h3>
+        <p>K300</p>
+        <button class="btn" onclick="addToCart('Smart Trousers', 29.99)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-24 at 13.09.12_d90b444c.jpg" alt="Swagger Trousers">
+        <h3>Swagger Cargo Pants</h3>
+        <p>K300</p>
+        <button class="btn" onclick="addToCart('Swagger Cargo Pants', 32.99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- SLIDES AND SLIPPERS -->
+    <h3>Slides & Slippers</h3>
+    <div class="products">
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-24 at 13.09.12_d90b444c.jpg" alt="Slides">
+        <h3>Casual Slides</h3>
+        <p>K220</p>
+        <button class="btn" onclick="addToCart('Casual Slides', 12.99)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-24 at 13.09.11_cb21b7fe.jpg" alt="Slippers">
+        <h3>Indoor Slippers</h3>
+        <p>K220</p>
+        <button class="btn" onclick="addToCart('Indoor Slippers', 9.99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- PHONES AND ACCESSORIES -->
+    <h3>Phones & Accessories</h3>
+    <div class="products">
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-24 at 12.52.28_a4ecc88a.jpg" alt="Phone">
+        <h3>Smartphone X</h3>
+        <p>$299.99</p>
+        <button class="btn" onclick="addToCart('Smartphone X', 299.99)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-24 at 12.35.06_5b338093.jpg" alt="Headphones">
+        <h3>Wireless Headphones</h3>
+        <p>K290</p>
+        <button class="btn" onclick="addToCart('Wireless Headphones', 49.99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- GADGETS -->
+    <h3>Gadgets</h3>
+    <div class="products">
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-24 at 12.35.06_5b338093.jpg" alt="Smartwatch">
+        <h3>Smartwatch</h3>
+        <p>K300</p>
+        <button class="btn" onclick="addToCart('Smartwatch', 89.99)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-24 at 13.09.14_56283f2b.jpg" alt="Tablet">
+        <h3>Android Tablet</h3>
+        <p>K2100</p>
+        <button class="btn" onclick="addToCart('Android Tablet', 149.99)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <script>// Cart array to hold products
+let cart = [];
+
+// Add product to cart
+function addToCart(productName, price) {
+  cart.push({ name: productName, price: price });
+  updateCartDisplay();
+}
+
+// Remove product from cart by index
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  updateCartDisplay();
+}
+
+// Clear all cart items
+function clearCart() {
+  cart = [];
+  updateCartDisplay();
+}
+
+// Update the cart display
+function updateCartDisplay() {
+  const cartContainer = document.getElementById('cart');
+  cartContainer.innerHTML = '<h3>Cart</h3>';
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML += '<p>Your cart is empty.</p>';
+    return;
+  }
+
+  const ul = document.createElement('ul');
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      ${item.name} - $${item.price.toFixed(2)}
+      <button onclick="removeFromCart(${index})" style="margin-left: 10px; color: red;">Remove</button>
+    `;
+    ul.appendChild(li);
+    total += item.price;
+  });
+
+  cartContainer.appendChild(ul);
+  cartContainer.innerHTML += `<p><strong>Total:</strong> $${total.toFixed(2)}</p>`;
+  cartContainer.innerHTML += `<button onclick="clearCart()" style="margin-top: 10px; background-color: darkred; color: white;">Clear Cart</button>`;
+}
+</script>
+</body>
+</html>

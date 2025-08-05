@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M'bale Drip Stores</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #078f88;
+    }
+
+    header, footer {
+      background-color: #04c796;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      align-items:center ;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px black;
+      text-align: center;
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product {
+      background: rgb(66, 105, 141);
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 20px;
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .btn {
+      background-color: #ff6600;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #e65c00;
+    }
+
+    #cart {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      background-color: rgb(58, 124, 19);
+      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+      padding: 20px;
+      overflow-y: auto;
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    #cart h2 {
+      margin-top: 0;
+    }
+
+    #cart-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .cart-total {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .close-cart {
+      background: red;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      float: right;
+      cursor: pointer;
+    }
+
+   #navbar {
+      display:flex ;
+      align-items: center;
+      justify-content: center;
+    } 
+
+#navbar li{
+  list-style:none ;
+  padding: 0 20px;
+
+}
+#navbar li a:hover{
+  color: #c50202;
+}
+
+    .view-cart {
+      background: #007bff;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+
+    .contact-form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>M'bale Drip Stores</h1>
+    <p>Your one-stop shop for fashion, gadgets, and more!</p>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="Loan Services.html">Loan Services</a></li>
+      <li><a href="Derivery Services.html">Deriver </a></li>     
+      <li><a href="contacts.html">Contact Us</a></li>
+      <li><a href="Shop.html">Shop</a></li>
+    </ul>
+  </nav>
+
+    <button class="view-cart" onclick="toggleCart()">🛒 View Cart (<span id="cart-count">0</span>)</button>
+  </nav>
+<section class="section" id="products">
+  <h2>Popular Products</h2>
+  <div class="products">
+    <div class="product">
+      <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-15 at 12.52.24_ab4e3bea.jpg" alt="Sneakers">
+      <h3>Sneakers</h3>
+      <p>K150</p>
+      <button class="btn" onclick="addToCart('Sneakers', 45.99)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-22 at 14.49.41_ca196f65.jpg" alt="Phone">
+      <h3>Smartphone</h3>
+      <p>$299.99</p>
+      <button class="btn" onclick="addToCart('Smartphone', 299.99)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-10 at 13.37.59_563866fd.jpg" alt="Sweatpants">
+      <h3>Sweatpants</h3>
+      <p>K300</p>
+      <button class="btn" onclick="addToCart('Sweatpants', 25.99)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-19 at 11.50.26_1ce911ad.jpg" alt="T-Shirt">
+      <h3>T-Shirt</h3>
+      <p>K170</p>
+      <button class="btn" onclick="addToCart('T-Shirt', 15.99)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-12 at 12.32.02_169bd374.jpg" alt="Shirt">
+      <h3>Formal Shirt</h3>
+      <p>K170</p>
+      <button class="btn" onclick="addToCart('Formal Shirt', 27.50)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-22 at 10.19.53_a992673c.jpg" alt="Trousers">
+      <h3>Trousers</h3>
+      <p>K300</p>
+      <button class="btn" onclick="addToCart('Trousers', 30.00)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-16 at 10.37.28_c5794da3.jpg"alt="Slippers">
+      <h3>Slippers</h3>
+      <p>K170</p>
+      <button class="btn" onclick="addToCart('Slippers', 12.99)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-11 at 14.58.26_77ea5332.jpg" alt="Earphones">
+      <h3>Wireless Earphones</h3>
+      <p>K290</p>
+      <button class="btn" onclick="addToCart('Wireless Earphones', 49.99)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="c:\Users\Abraham Phiri\Downloads\WhatsApp Image 2025-07-22 at 14.49.27_d5428444.jpg" alt="Powerbank">
+      <h3>Powerbank 10,000mAh</h3>
+      <p>$19.99</p>
+      <button class="btn" onclick="addToCart('Powerbank', 19.99)">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+        <button class="btn" onclick="addToCart('Sweatpants', 25.99)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 M'bale Drip Stores. All rights reserved.</p>
+  </footer>
+
+  <!-- Cart Modal -->
+  <div id="cart">
+    <button class="close-cart" onclick="toggleCart()">Close</button>
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p class="cart-total">Total: $<span id="total-price">0.00</span></p>
+  </div>
+
+  <script>
+    const cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const cartItems = document.getElementById("cart-items");
+      const totalPrice = document.getElementById("total-price");
+      const cartCount = document.getElementById("cart-count");
+
+      cartItems.innerHTML = "";
+      let total = 0;
+
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.className = "cart-item";
+        li.innerHTML = `<span>${item.name}</span><span>$${item.price.toFixed(2)}</span>`;
+        cartItems.appendChild(li);
+        total += item.price;
+      });
+
+      totalPrice.innerText = total.toFixed(2);
+      cartCount.innerText = cart.length;
+    }
+
+    function toggleCart() {
+      const cartBox = document.getElementById("cart");
+      cartBox.style.display = cartBox.style.display === "flex" ? "none" : "flex";
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      document.getElementById("form-message").innerText = "Message sent successfully!";
+    }
+  </script>
+
+</body>
+</html>
